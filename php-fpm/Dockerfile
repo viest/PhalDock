@@ -45,7 +45,7 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 
 RUN mkdir -p /usr/local/phalcon/ && \
-    wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip \
+    wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip &&\
     unzip /usr/local/phalcon/master.zip
 
 RUN useradd -m -s /bin/bash docker

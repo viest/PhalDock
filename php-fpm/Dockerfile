@@ -9,7 +9,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
 RUN apt-get update
 
 RUN apt-get install -y \
+    unzip \
     curl \
+    wget \
     libmemcached-dev \
     libz-dev \
     libpq-dev \
@@ -42,10 +44,9 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.a /usr/local/openssl/lib/libssl.a && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 
-RUN mkdir -p /usr/local/install/ && \
-    git clone git://github.com/phalcon/cphalcon.git "/usr/local/install/"
-
-RUN pecl install mongodb
+RUN mkdir -p /usr/local/phalcon/ && \
+    wget wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip \
+    unzip /usr/local/phalcon/master.zip
 
 RUN useradd -m -s /bin/bash docker
 

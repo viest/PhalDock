@@ -1,0 +1,41 @@
+version: '1'
+services:
+
+##### work container #####
+  workspace:
+    build:
+      context: ./workspace
+    tty: true
+
+##### php-fpm container #####
+  php-fpm:
+    build:
+      context: ./php-fpm
+    ports:
+      - "9000"
+    volumes:
+      - ./logs/php-fpm:/var/log/
+      - ./workspace/app:/var/www
+
+##### nginx container #####
+  nginx:
+    build:
+      context: ./nginx
+      args:
+        - PHP_UPSTREAM=php-fpm
+    volumes:
+      - ./logs/nginx/:/var/log/nginx
+      - ./workspace/app:/var/www
+    ports:
+      - "8080:80"
+    links:
+      - php-fpm
+
+###### redis container #####
+  redis:
+    build: ./redis
+    volumes:
+      - ./data/redis:/data
+      - ./redis/conf:/etc/reids
+    ports:
+      - "6379:6379"

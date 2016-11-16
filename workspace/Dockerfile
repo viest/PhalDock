@@ -38,7 +38,7 @@ RUN curl -sS https://getcomposer.org/installer | php && \
 
 RUN useradd -m -s /bin/bash docker
 
-WORKDIR /home/docker
+WORKDIR /var/www
 
-ADD application/* /home/docker
-RUN chown -R docker:docker /home/docker
+ADD application/* /var/www
+RUN chown -R docker:docker /var/www

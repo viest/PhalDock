@@ -45,8 +45,12 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/lib/x86_64-linux-gnu/libssl.so /usr/local/openssl/lib/
 
 RUN mkdir -p /usr/local/phalcon/ && \
-    wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip &&\
-    unzip /usr/local/phalcon/master.zip
+    wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip && \
+    unzip /usr/local/phalcon/master.zip -d /usr/local/phalcon/ && \
+    cd /usr/local/phalcon/cphalcon-master/build/ && \
+    ./install
+
+RUN echo "extension=phalcon.so \n" >> /etc/php/7.0/fpm/php.ini
 
 RUN useradd -m -s /bin/bash docker
 
@@ -55,3 +59,5 @@ ADD ./php-fpm.conf /etc/php/7.0/fpm/php-fpm.conf
 WORKDIR /var/www
 RUN chown -R docker:docker /var/www
 CMD /usr/sbin/php-fpm7.0 --nodaemonize
+
+EXPOSE 9000

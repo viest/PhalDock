@@ -1,13 +1,19 @@
 version: '2.0'
+
 services:
 
-##### work container #####
+#---------------------------#
+###### work  container ######
+#---------------------------#
+
   workspace:
     build:
       context: ./workspace
     tty: true
-
+#---------------------------#
 ##### php-fpm container #####
+#---------------------------#
+
   php-fpm:
     build:
       context: ./php-fpm
@@ -15,9 +21,12 @@ services:
       - "9000"
     volumes:
       - ./logs/php-fpm:/var/log/
-      - ./workspace/app:/var/www
+      - ./workspace/application:/var/www
 
-##### nginx container #####
+#---------------------------#
+###### nginx container ######
+#---------------------------#
+
   nginx:
     build:
       context: ./nginx
@@ -25,13 +34,16 @@ services:
         - PHP_UPSTREAM=php-fpm
     volumes:
       - ./logs/nginx/:/var/log/nginx
-      - ./workspace/app:/var/www
+      - ./workspace/application:/var/www
     ports:
-      - "8080:80"
+      - "80:80"
     links:
       - php-fpm
 
-###### redis container #####
+#---------------------------#
+###### redis  container #####
+#---------------------------#
+
   redis:
     build: ./redis
     volumes:

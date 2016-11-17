@@ -5,7 +5,9 @@ MAINTAINER VikinDev "vikindev@outlook.com"
 RUN sed -i 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//http:\/\/mirrors\.aliyun\.com\/ubuntu\//g' /etc/apt/sources.list
 
 RUN echo 'deb http://ppa.launchpad.net/ondrej/php/ubuntu trusty main' > /etc/apt/sources.list.d/php.list
+
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E5267A6C
+
 RUN apt-get update
 
 RUN apt-get install -y \

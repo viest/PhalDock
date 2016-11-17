@@ -43,12 +43,12 @@ docker-compose stop {container-name}
 
 #####1、Use phpstrom open "PhalDock/workspace/application"
 
-![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/open.png)
+![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/Open.png)
 
 #####2、Editor test.php
 
-![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/editor.png)
+![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/Editor.png)
 
 #####3、Refresh the localhost
 
-![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/localhost.png)
+![image](https://github.com/VikinArtisan/PhalDock/blob/master/resource/Localhost.png)

@@ -50,7 +50,7 @@ RUN mkdir -p /usr/local/phalcon/ && \
     cd /usr/local/phalcon/cphalcon-master/build/ && \
     ./install
 
-RUN echo "extension=phalcon.so \n" >> /etc/php/7.0/fpm/php.ini
+RUN echo "extension=phalcon.so" > /etc/php/7.0/fpm/conf.d/phalcon.ini
 
 RUN useradd -m -s /bin/bash docker
 

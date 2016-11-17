@@ -50,7 +50,8 @@ RUN mkdir -p /usr/local/phalcon/ && \
     wget -P /usr/local/phalcon/ https://github.com/phalcon/cphalcon/archive/master.zip && \
     unzip /usr/local/phalcon/master.zip -d /usr/local/phalcon/ && \
     cd /usr/local/phalcon/cphalcon-master/build/ && \
-    ./install
+    ./install && \
+    rm -rf /usr/local/phalcon
 
 RUN echo "extension=phalcon.so" > /etc/php/7.0/fpm/conf.d/phalcon.ini
 

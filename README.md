@@ -1,3 +1,4 @@
+[![Phalcon master](https://img.shields.io/badge/phalcon-master-green.svg)](https://github.com/phalcon/cphalcon)
 ###Install
 
 Clone this repository on your project root directory:

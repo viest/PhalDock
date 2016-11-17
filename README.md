@@ -1,3 +1,4 @@
+[![Version 0.1](https://img.shields.io/badge/Version-0.1-brightgreen.svg)](https://github.com/VikinArtisan/PhalDock)
 [![Phalcon master](https://img.shields.io/badge/phalcon-master-green.svg)](https://github.com/phalcon/cphalcon)
 ###Install
 

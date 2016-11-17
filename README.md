@@ -38,3 +38,11 @@ docker-compose stop
 ```bash
 docker-compose stop {container-name}
 ```
+
+###On PhpStrom IDE development 
+
+#####1、Use phpstrom open "PhalDock/workspace/application"
+![image](https://github.com/ButBueatiful/dotvim/raw/master/screenshots/vim-screenshot.jpg)
+#####2、Editor test.php
+
+#####3、Refresh the localhost

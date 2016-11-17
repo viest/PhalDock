@@ -13,7 +13,7 @@ git clone git@github.com:VikinArtisan/PhalDock.git
 Run Containers: (Make sure you are in the PhalDock folder before running the docker-compose commands).D
 
 ```bash
-docker-composer build
+docker-compose build
 ```
 #####2、Running container
 
